@@ -2,7 +2,7 @@
 
 One of the key things we want to do in API v3 which is more on the implementation side (but still relevant here) is to have a clean data model that scales horizontally and allows for multiple distributed backups. At the moment, the data relating to a package is stored in two places: The NuGet Gallery SQL Database, and the NuPkg file in Azure Blob storage. Neither location has the complete set of data, and while both **are** backed-up, restoring them is made more difficult by the potential for them becoming out of date.
 
-This spec proposes a data model for NuGet that creates a single authoritative data store (which can be scaled horizontally and replicated freely) called "Atoms". The name deriving from the fact that this data format would be the smallest, indivisible, piece of data the Gallery stores.
+This spec proposes a data model for NuGet that creates a single authoritative data store (which can be scaled horizontally and replicated freely) called "Atoms". The name deriving from the fact that this data format would be the single, indivisible, piece of authoritative data the Gallery stores about a package.
 
 ## What is an Atom?
 A Package "Atom" is three pieces of information
