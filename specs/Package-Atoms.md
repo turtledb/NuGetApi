@@ -18,7 +18,9 @@ To provide some concrete specification of what this looks like, consider the NuG
   * Metadata.json
   * Signature.sig
 
-The NuPkg file is the exact same file provided by the user. The Metadata.json contains **all** metadata added to the package by the Gallery (for example, package owners, probably in the form of email addresses to facilitate recovery from a loss of user account data) as well as a Hash of the content of the original NuPkg. The Signature file contains a cryptographic signature produced using a private key held by the Gallery (or some subsystem of it). This signature need not be generated from a fully trusted certificate chain, only from a self-generated key that is kept secure (see Security below).
+The NuPkg file is the exact same file provided by the user. The Metadata.json contains **all** metadata added to the package by the Gallery (for example, package owners, probably in the form of email addresses to facilitate recovery from a loss of user account data) as well as a Hash of the content of the attached NuPkg, to detect tampering with the content of the atom. The Signature file contains a cryptographic signature produced using a private key held by the Gallery (or some subsystem of it). This signature need not be generated from a fully trusted certificate chain, only from a self-generated key that is kept secure (see Security below).
+
+The `hash` in the atom file name is the hash of the entire content of the atom (or perhaps just the signature data repeated or the unsigned version of the signature hash). It is solely present to "uniqueify" atom file names.
 
 ## Why an Archive?
 A ZIP file (or other Archive) is suggested because files are generally treated as single entities and there are mechanisms on most platforms (including Azure blob storage) to work Atomically with files. Thus, compacting all package data into a file allows us to take advantage of those atomic systems.
