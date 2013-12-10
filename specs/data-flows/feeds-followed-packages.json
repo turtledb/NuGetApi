@@ -1,8 +1,9 @@
 {
 	"@context":
 	{
-		"@base": "http://api.nuget.org",
-		"@id": "/jsonld-contexts/feed.jsonld",
+		"@base": "http://api.nuget.org/",
+		"@id": "jsonld/contexts/feed",
+		"nuget": "/jsonld/vocab#",
 		"dc": "http://purl.org/dc/terms/",
 		"xsd": "http://www.w3.org/2001/XMLSchema#",
 		"title": "dc:title",

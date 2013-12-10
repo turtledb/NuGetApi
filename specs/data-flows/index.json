@@ -1,98 +1,124 @@
 {
-	"http://api.nuget.org": {
-		"self" : "http://api.nuget.org",
-		"alternates": [
-			"http://myget.org",
-			"http://api.someothermirror.com",
-			"http://static.api.nuget.org"
-		],
-		"services": {
-			"feeds": "http://api.nuget.org#feeds",
-			"suggestion": "http://api.nuget.org#suggestion",
-			"signin": "http://api.nuget.org/logon",
-			"alerts": "http://api.nuget.org/alerts",
-			"packages": "http://api.nuget.org/packages",
-			"packageIncompatibilities": "http://api.nuget.org/incompatibilities",
-			"packageDownload" : "http://api.nuget.org#download",
-			"packageManifest" : "http://api.nuget.org#manifest",
-			"v2": "http://api.nuget.org#v2"
+	"@context":
+	{
+		"@base": "http://api.nuget.org/",
+		"@id": "/jsonld/context/index",
+		"nuget": "/jsonld/vocab#",
+		"dc": "http://purl.org/dc/terms/",
+		"title": "dc:title",
+		"alternates":
+		{
+			"@id": "alternates",
+			"@type": "nuget:alternates"
 		},
-		"terms" : "http://www.nuget.org/policies/Terms",
-		"privacy" : "http://www.nuget.org/policies/Privacy",
-		"data" : {
-			"name" : "NuGet.org API v3",
-			"version" : 3,
-			"other" : "more data about the gallery"
+		"feeds":
+		{
+			"@id": "feeds",
+			"@type": "nuget:feeds"
+		},
+		"v2": "nuget:api-v2",
+		"download": "nuget:download",
+		"manifest": "nuget:manifest",
+		"incompatibilities": "nuget:incompatibilities",
+		"alerts": "nuget:alerts",
+		"website": "nuget:website",
+		"terms": "nuget:terms",
+		"privacy": "nuget:privacy"
+	},
+	"title": "NuGet.org",
+	"alternates":
+	{
+		"http://api.myget.org":
+		{
+			"@id": "http://api.myget.org",
+			"title": "MyGet.org"
+		},
+		"http://api.someothermirror.com":
+		{
+			"@id": "http://api.someothermirror.com",
+			"title": "Some Other Mirror"
+		},
+		"http://static.api.nuget.org":
+		{
+			"@id": "http://static.api.nuget.org",
+			"title": "NuGet.org (static mirror)"
 		}
 	},
-	"http://api.nuget.org#download" : {
-		"self" : "http://api.nuget.org/download",
-		"package" : "http://api.nuget.org/download/package/{packageid}/{version}",
-		"packages" : "http://api.nuget.org/download/packages"
-	},
-	"http://api.nuget.org#manifest" : {
-		"self" : "http://api.nuget.org/manifest",
-		"package" : "http://api.nuget.org/manifest/package/{packageid}/{version}",
-		"packages" : "http://api.nuget.org/manifest/packages"
-	},
-	"http://api.nuget.org#feeds" : {
-		"self" : "http://api.nuget.org/feeds",
-		"feeds": [
-			"http://api.nuget.org#feeds/all",
-			"http://api.nuget.org#feeds/microsoftdotnet",
-			"http://api.nuget.org#feeds/webmatrix",
-			"http://api.nuget.org#feeds/windows8",
-			"http://api.nuget.org#feeds/followed-packages",
-		],
-		"data" : {
-			"name" : "NuGet Feeds"
-		}
-	},
-	"http://api.nuget.org#feeds/all": {
-		"self": "http://api.nuget.org/feeds/all",
-		"data": {
+	"feeds":
+	{
+		"feeds/all":
+		{
+			"@id": "http://api.nuget.org/feeds/all",
 			"name": "All Packages",
-			"description": "The consolidated list of all NuGet packages"
-		}
-	},
-	"http://api.nuget.org#feeds/microsoftdotnet": {
-		"self": "http://api.nuget.org/feeds/microsoftdotnet",
-		"data": {
+			"description": "The consolidated list of all NuGet packages",
+			"v2": "https://www.nuget.org/api/v2/"
+		},
+		"feeds/microsoftdotnet":
+		{
+			"@id": "http://api.nuget.org/feeds/microsoftdotnet",
 			"name": "Microsoft and .NET",
-			"description": "Microsoft-supported and .NET Framework packages"
-		}
-	},
-	"http://api.nuget.org#feeds/webmatrix": {
-		"self": "http://api.nuget.org/feeds/webmatrix",
-		"data": {
+			"description": "Microsoft-supported and .NET Framework packages",
+			"v2": "https://www.nuget.org/api/v2/curated-feeds/microsoftdotnet/"
+		},
+		"feeds/WebMatrix":
+		{
+			"@id": "http://api.nuget.org/feeds/webmatrix",
 			"name": "WebMatrix packages",
-			"description": "Packages for Web projects"
-		}
-	},
-	"http://api.nuget.org#feeds/windows8": {
-		"self": "http://api.nuget.org/feeds/windows8",
-		"data": {
+			"description": "Packages for Web projects",
+			"v2": "https://www.nuget.org/api/v2/curated-feeds/webmatrix/"
+		},
+		"feeds/windows8":
+		{
+			"@id": "http://api.nuget.org/feeds/windows8",
 			"name": "Windows 8 Packages",
-			"description": "Packages for Windows 8 projects"
-		}
-	},
-	"http://api.nuget.org#feeds/followed-packages": {
-		"self": "http://api.nuget.org/feeds/followed-packages",
-		"data": {
+			"description": "Packages for Windows 8 projects",
+			"v2": "https://www.nuget.org/api/v2/curated-feeds/windows8/"
+		},
+		"feeds/followed-packages":
+		{
+			"@id": "http://api.nuget.org/feeds/followed-packages",
 			"name": "Packages I Follow",
 			"description": "My very own personalized packge list"
 		}
 	},
-	"http://api.nuget.org#suggestions" : {
-		"self" : "http://api.nuget.org/suggestions",
-		"data" : {
-			"name" : "Package Suggestions"
-		}
+	"download":
+	{
+		"@context":
+		{
+			"@id": "jsonld-context/download",
+			"package": "nuget:package-template",
+			"packages": "nuget:packages-list"
+		},
+		"@id": "download",
+		"package": "download/package/{packageid}/{packageversion}",
+		"packages": "download/packages"
 	},
-	"http://api.nuget.org#v2" : {
-		"self" : "http://api.nuget.org/v2",
-		"nuget.org" : "http://www.nuget.org/api/v2/",
-		"Windows 8 Packages" : "http://www.nuget.org/api/v2/curated-feeds/Windows8/",
-		"WebMatrix Package Source" : "http://www.nuget.org/api/v2/curated-feeds/WebMatrix"
-	}
+	"manifest":
+	{
+		"@context":
+		{
+			"@id": "jsonld-context/download",
+			"package": "nuget:package-template",
+			"packages": "nuget:packages-list"
+		},
+		"@id": "manifest",
+		"package": "manifest/package/{packageid}/{packageversion}",
+		"packages": "manifest/packages"
+	},
+	"incompatibilities":
+	{
+		"@context":
+		{
+			"@id": "jsonld-context/download",
+			"package": "nuget:package-template",
+			"packages": "nuget:packages-list"
+		},
+		"@id": "incompatibilities",
+		"package": "incompatibilities/package/{packageid}/{packageversion}",
+		"packages": "incompatibilities/packages"		
+	},
+	"alerts": "alerts",
+	"website": "http://www.nuget.org",
+	"terms": "http://www.nuget.org/policies/terms",
+	"privacy": "http://www.nuget.org/policies/privacy"
 }
