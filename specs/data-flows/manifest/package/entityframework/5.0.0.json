@@ -1,0 +1,54 @@
+{
+	"@context":
+	{
+		"@id": "/jsonld-context/manifest"
+	},
+	"schema": "http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd",
+	"nuspec": "/manifest/package/EntityFramework/5.0.0/nuspec",
+	"packageId": "EntityFramework",
+	"packageVersion": "5.0.0",
+	"authors": "Microsoft",
+	"owners":
+	[
+		{
+			"@id": "/users/microsoft",
+			"title": "microsoft"
+		},
+		{
+			"@id": "/users/EntityFramework",
+			"title": "EntityFramework"
+		}
+	],
+	"licenseUrl": "http://go.microsoft.com/fwlink/?LinkId=253898&amp;clcid=0x409",
+	"projectUrl": "http://go.microsoft.com/fwlink/?LinkId=253891&amp;clcid=0x409",
+	"iconUrl": "http://go.microsoft.com/fwlink/?LinkID=386613",
+	"requireLicenseAcceptance": true,
+	"description": "Entity Framework is Microsoft's recommended data access technology for new applications.",
+	"summary": "Entity Framework is Microsoft's recommended data access technology for new applications.",
+	"language": "en-US",
+	"frameworkAssemblies":
+	[
+		"System.Data.Entity",
+		"System.ComponentModel.DataAnnotations"
+	],
+	"files":
+	[
+		"Content/App.config.transform",
+		"Content/Web.config.transform",
+		"lib/net40/EntityFramework.dll",
+		"lib/net40/EntityFramework.xml",
+		"lib/net45/EntityFramework.dll",
+		"lib/net45/EntityFramework.xml",
+		"tools/about_EntityFramework.help.txt",
+		"tools/EntityFramework.PowerShell.dll",
+		"tools/EntityFramework.PowerShell.Utility.dll",
+		"tools/EntityFramework.PS3.psd1",
+		"tools/EntityFramework.psd1",
+		"tools/EntityFramework.psm1",
+		"tools/init.ps1",
+		"tools/install.ps1",
+		"tools/migrate.exe",
+		"tools/Redirect.config",
+		"tools/Redirect.CS11.config"
+	]
+}

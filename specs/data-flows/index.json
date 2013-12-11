@@ -1,7 +1,6 @@
 {
 	"@context":
 	{
-		"@base": "http://api.nuget.org/",
 		"@id": "/jsonld/context/index",
 		"nuget": "/jsonld/vocab#",
 		"dc": "http://purl.org/dc/terms/",
@@ -17,10 +16,6 @@
 			"@type": "nuget:feeds"
 		},
 		"v2": "nuget:api-v2",
-		"download": "nuget:download",
-		"manifest": "nuget:manifest",
-		"incompatibilities": "nuget:incompatibilities",
-		"alerts": "nuget:alerts",
 		"website": "nuget:website",
 		"terms": "nuget:terms",
 		"privacy": "nuget:privacy"
@@ -46,37 +41,37 @@
 	},
 	"feeds":
 	{
-		"feeds/all":
+		"/feeds/all":
 		{
-			"@id": "http://api.nuget.org/feeds/all",
+			"@id": "/feeds/all",
 			"name": "All Packages",
 			"description": "The consolidated list of all NuGet packages",
 			"v2": "https://www.nuget.org/api/v2/"
 		},
-		"feeds/microsoftdotnet":
+		"/feeds/microsoftdotnet":
 		{
-			"@id": "http://api.nuget.org/feeds/microsoftdotnet",
+			"@id": "/feeds/microsoftdotnet",
 			"name": "Microsoft and .NET",
 			"description": "Microsoft-supported and .NET Framework packages",
 			"v2": "https://www.nuget.org/api/v2/curated-feeds/microsoftdotnet/"
 		},
-		"feeds/WebMatrix":
+		"/feeds/WebMatrix":
 		{
-			"@id": "http://api.nuget.org/feeds/webmatrix",
+			"@id": "/feeds/webmatrix",
 			"name": "WebMatrix packages",
 			"description": "Packages for Web projects",
 			"v2": "https://www.nuget.org/api/v2/curated-feeds/webmatrix/"
 		},
-		"feeds/windows8":
+		"/feeds/windows8":
 		{
-			"@id": "http://api.nuget.org/feeds/windows8",
+			"@id": "/feeds/windows8",
 			"name": "Windows 8 Packages",
 			"description": "Packages for Windows 8 projects",
 			"v2": "https://www.nuget.org/api/v2/curated-feeds/windows8/"
 		},
-		"feeds/followed-packages":
+		"/feeds/followed-packages":
 		{
-			"@id": "http://api.nuget.org/feeds/followed-packages",
+			"@id": "/feeds/followed-packages",
 			"name": "Packages I Follow",
 			"description": "My very own personalized packge list"
 		}
@@ -85,39 +80,39 @@
 	{
 		"@context":
 		{
-			"@id": "jsonld-context/download",
+			"@id": "/jsonld-context/download",
 			"package": "nuget:package-template",
 			"packages": "nuget:packages-list"
 		},
-		"@id": "download",
-		"package": "download/package/{packageid}/{packageversion}",
-		"packages": "download/packages"
+		"@id": "/download",
+		"package": "/download/package/{packageid}/{packageversion}",
+		"packages": "/download/packages"
 	},
 	"manifest":
 	{
 		"@context":
 		{
-			"@id": "jsonld-context/download",
+			"@id": "/jsonld-context/manifest",
 			"package": "nuget:package-template",
 			"packages": "nuget:packages-list"
 		},
-		"@id": "manifest",
-		"package": "manifest/package/{packageid}/{packageversion}",
-		"packages": "manifest/packages"
+		"@id": "/manifest",
+		"package": "/manifest/package/{packageid}/{packageversion}",
+		"packages": "/manifest/packages"
 	},
 	"incompatibilities":
 	{
 		"@context":
 		{
-			"@id": "jsonld-context/download",
+			"@id": "/jsonld-context/download",
 			"package": "nuget:package-template",
 			"packages": "nuget:packages-list"
 		},
-		"@id": "incompatibilities",
-		"package": "incompatibilities/package/{packageid}/{packageversion}",
-		"packages": "incompatibilities/packages"		
+		"@id": "/incompatibilities",
+		"package": "/incompatibilities/package/{packageid}/{packageversion}",
+		"packages": "/incompatibilities/packages"		
 	},
-	"alerts": "alerts",
+	"alerts": "/alerts",
 	"website": "http://www.nuget.org",
 	"terms": "http://www.nuget.org/policies/terms",
 	"privacy": "http://www.nuget.org/policies/privacy"

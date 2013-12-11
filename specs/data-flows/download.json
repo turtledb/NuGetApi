@@ -1,7 +1,11 @@
 {
-	"http://api.nuget.org/download" : {
-		"self" : "http://api.nuget.org/download",
-		"package" : "http://api.nuget.org/download/package/{packageid}/{version}",
-		"packages" : "http://api.nuget.org/download/packages"
-	}
+	"@context":
+	{
+		"@id": "/jsonld-context/download",
+		"package": "nuget:package-template",
+		"packages": "nuget:packages-list"
+	},
+	"@id": "/download",
+	"package": "/download/package/{packageid}/{packageversion}",
+	"packages": "/download/packages"
 }
