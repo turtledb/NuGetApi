@@ -1,11 +1,11 @@
 {
 	"@context":
 	{
+		"@base": "http://api.nuget.org",
 		"@id": "/jsonld-context/download",
 		"package": "nuget:package-template",
 		"packages": "nuget:packages-list"
 	},
-	"@id": "/download",
 	"package": "/download/package/{packageid}/{packageversion}",
 	"packages": "/download/packages"
 }

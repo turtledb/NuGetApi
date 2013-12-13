@@ -1,11 +1,11 @@
 {
 	"@context":
 	{
+		"@base": "http://api.nuget.org",
 		"@id": "/jsonld-context/manifest",
 		"package": "nuget:package-template",
 		"packages": "nuget:packages-list"
 	},
-	"@id": "/manifest",
 	"package": "/manifest/package/{packageid}/{packageversion}",
 	"packages": "/manifest/packages"
 }
