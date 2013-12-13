@@ -1,0 +1,21 @@
+﻿/*
+GET http://api.nuget.org/
+=================================
+Content-Type: application/ld+json
+Link: <http://api.nuget.org/doc/>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+*/
+{
+	"@context": {
+		"hydra": "http://purl.org/hydra/core",
+		"vocab": "http://api.nuget.org/vocab#",
+		"EntryPoint": "vocab:EntryPoint",
+		"alternates": {
+			"@id": "vocab:EntryPoint/alternates",
+			"@type": "@id"
+		},
+		"feeds": {
+			"@id": "vocab:EntryPoint/feeds",
+			"@type": "@id"
+		}
+	}
+}

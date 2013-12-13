@@ -1,0 +1,11 @@
+/*
+GET http://api.nuget.org/doc/
+=================================
+Content-Type: application/ld+json
+*/
+{
+	"@context": "http://www.w3.org/ns/hydra/context.jsonld",
+	"@id": "http://api.nuget.org/doc/",
+	"title": "NuGet.org API",
+	"entryPoint": "http://api.nuget.org/"
+}

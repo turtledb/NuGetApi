@@ -1,0 +1,71 @@
+/*
+GET http://api.nuget.org/vocab
+=================================
+Content-Type: application/ld+json
+*/
+{
+	"@context": {
+		"vocab": "http://api.nuget.org/vocab#",
+		"hydra": "http://purl.org/hydra/core#",
+		"ApiDocumentation": "hydra:ApiDocumentation",
+		"property": "hydra:property",
+		"readonly": "hydra:readonly",
+		"writeonly": "hydra:writeonly",
+		"supportedClasses": "hydra:supportedClasses",
+		"supportedProperties": "hydra:supportedProperties",
+		"supportedOperations": "hydra:supportedOperations",
+		"method": "hydra:method",
+		"expects": {
+			"@id": "hydra:expects",
+			"@type": "@id"
+		},
+		"returns": {
+			"@id": "hydra:returns",
+			"@type": "@id"
+		},
+		"statusCodes": "hydra:statusCodes",
+		"statusCode": "hydra:statusCode",
+		"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+		"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+		"label": "rdfs:label",
+		"description": "rdfs:comment",
+		"domain": {
+			"@id": "rdfs:domain",
+			"@type": "@id"
+		},
+		"range": {
+			"@id": "rdfs:range",
+			"@type": "@id"
+		}
+	},
+	"@id": "http://api.nuget.org/vocab",
+	"@type": "ApiDocumentation",
+	"supportedClasses": [
+		{
+			"@id": "vocab:EntryPoint",
+			"@type": "hydra:Class",
+			"description": "The main entry point or homepage of the API",
+			"label": "EntryPoint",
+			"supportedProperties": [
+				{
+					"property": {
+						"@id": "vocab:EntryPoint/alternates",
+						"@type": "@id",
+						"description": "Alternate entry points for the API",
+						"domain": "vocab:EntryPoint",
+						"label": "alternates"
+					}
+				},
+				{
+					"property": {
+						"@id": "vocab:EntryPoint/feeds",
+						"@type": "@id",
+						"description": "Feeds exposed by the NuGet API",
+						"domain": "vocab:EntryPoint",
+						"label": "feeds"
+					}
+				}
+			]
+		}
+	]
+}

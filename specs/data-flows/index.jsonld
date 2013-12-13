@@ -1,3 +1,30 @@
+/*
+GET http://api.nuget.org/
+=================================
+Content-Type: application/ld+json
+Link: <http://api.nuget.org/doc/>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+*/
+{
+	"@context": "/jsonld-context/entrypoint.jsonld",
+	"@type": "EntryPoint",
+	"alternates": {
+		"@id": "/alternates",
+		"http://api.myget.org": {
+			"@id": "http://api.myget.org",
+			"title": "MyGet.org"
+		},
+		"http://api.someothermirror.com": {
+			"@id": "http://api.someothermirror.com",
+			"title": "Some Other Mirror"
+		},
+		"http://static.api.nuget.org": {
+			"@id": "http://static.api.nuget.org",
+			"title": "NuGet.org (static mirror)"
+		}
+	},
+	"feeds": "/feeds"
+}
+/*
 {
 	"@context":
 	{
@@ -21,61 +48,6 @@
 		"privacy": "nuget:privacy"
 	},
 	"title": "NuGet.org",
-	"alternates":
-	{
-		"http://api.myget.org":
-		{
-			"@id": "http://api.myget.org",
-			"title": "MyGet.org"
-		},
-		"http://api.someothermirror.com":
-		{
-			"@id": "http://api.someothermirror.com",
-			"title": "Some Other Mirror"
-		},
-		"http://static.api.nuget.org":
-		{
-			"@id": "http://static.api.nuget.org",
-			"title": "NuGet.org (static mirror)"
-		}
-	},
-	"feeds":
-	{
-		"/feeds/all":
-		{
-			"@id": "/feeds/all",
-			"name": "All Packages",
-			"description": "The consolidated list of all NuGet packages",
-			"v2": "https://www.nuget.org/api/v2/"
-		},
-		"/feeds/microsoftdotnet":
-		{
-			"@id": "/feeds/microsoftdotnet",
-			"name": "Microsoft and .NET",
-			"description": "Microsoft-supported and .NET Framework packages",
-			"v2": "https://www.nuget.org/api/v2/curated-feeds/microsoftdotnet/"
-		},
-		"/feeds/WebMatrix":
-		{
-			"@id": "/feeds/webmatrix",
-			"name": "WebMatrix packages",
-			"description": "Packages for Web projects",
-			"v2": "https://www.nuget.org/api/v2/curated-feeds/webmatrix/"
-		},
-		"/feeds/windows8":
-		{
-			"@id": "/feeds/windows8",
-			"name": "Windows 8 Packages",
-			"description": "Packages for Windows 8 projects",
-			"v2": "https://www.nuget.org/api/v2/curated-feeds/windows8/"
-		},
-		"/feeds/followed-packages":
-		{
-			"@id": "/feeds/followed-packages",
-			"name": "Packages I Follow",
-			"description": "My very own personalized packge list"
-		}
-	},
 	"download":
 	{
 		"@context":
@@ -117,3 +89,4 @@
 	"terms": "http://www.nuget.org/policies/terms",
 	"privacy": "http://www.nuget.org/policies/privacy"
 }
+*/

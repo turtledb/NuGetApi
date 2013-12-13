@@ -1,7 +1,42 @@
+/*
+
+		"@id": "/feeds",
+		"all": {
+			"@id": "/feeds/all",
+			"name": "All Packages",
+			"description": "The consolidated list of all NuGet packages",
+			"v2": "https://www.nuget.org/api/v2/"
+		},
+		"microsoftdotnet": {
+			"@id": "/feeds/microsoftdotnet",
+			"name": "Microsoft and .NET",
+			"description": "Microsoft-supported and .NET Framework packages",
+			"v2": "https://www.nuget.org/api/v2/curated-feeds/microsoftdotnet/"
+		},
+		"webmatrix": {
+			"@id": "/feeds/webmatrix",
+			"name": "WebMatrix packages",
+			"description": "Packages for Web projects",
+			"v2": "https://www.nuget.org/api/v2/curated-feeds/webmatrix/"
+		},
+		"windows8": {
+			"@id": "/feeds/windows8",
+			"name": "Windows 8 Packages",
+			"description": "Packages for Windows 8 projects",
+			"v2": "https://www.nuget.org/api/v2/curated-feeds/windows8/"
+		},
+		"followed": {
+			"@id": "/feeds/followed",
+			"name": "Packages I Follow",
+			"description": "My very own personalized packge list"
+		}
+
+*/
+
 {
 	"@context":
 	{
-		"@id": "/jsonld/context/feeds",
+		"@id": "/jsonld-context/feeds",
 		"nuget": "/jsonld/vocab#",
 		"dc": "http://purl.org/dc/terms/",
 		"xsd": "http://www.w3.org/2001/XMLSchema#",
