@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -31,6 +33,7 @@ namespace NuGet.Services.Azure
             }
             catch (Exception ex)
             {
+                DumpFatalException(ex.ToString());
                 ServicePlatformEventSource.Log.FatalException(ex);
                 throw;
             }
@@ -51,6 +54,7 @@ namespace NuGet.Services.Azure
             }
             catch (Exception ex)
             {
+                DumpFatalException(ex.ToString());
                 ServicePlatformEventSource.Log.FatalException(ex);
                 throw;
             }
@@ -82,9 +86,29 @@ namespace NuGet.Services.Azure
             }
             catch (Exception ex)
             {
+                DumpFatalException(ex.ToString());
                 ServicePlatformEventSource.Log.FatalException(ex);
                 throw;
             }
+        }
+
+        private void DumpFatalException(string text)
+        {
+            string dir = Path.Combine(
+                Path.GetTempPath(), "NuGetServices", "FatalErrors");
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+            string baseName = Path.Combine(
+                dir, String.Format(CultureInfo.InvariantCulture, "Exception_{0}.txt", DateTime.UtcNow.ToString("S")));
+            string fileName = baseName;
+            int counter = 1;
+            while (File.Exists(fileName))
+            {
+                fileName = Path.ChangeExtension(fileName, "." + counter.ToString() + ".txt");
+            }
+            File.WriteAllText(fileName, text);
         }
 
         protected internal abstract IEnumerable<ServiceDefinition> GetServices();
