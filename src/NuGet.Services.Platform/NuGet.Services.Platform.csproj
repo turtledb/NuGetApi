@@ -164,6 +164,7 @@
     <Compile Include="Http\Middleware\NuGetServiceInformationMiddleware.cs" />
     <Compile Include="Http\Models\ApiDescription.cs" />
     <Compile Include="Http\TransferBlobResult.cs" />
+    <Compile Include="Monitoring\MonitoringHub.cs" />
     <Compile Include="Roles.cs" />
     <Compile Include="ServiceModel\EnvironmentName.cs" />
     <Compile Include="ServiceModel\LocalServiceHost.cs" />

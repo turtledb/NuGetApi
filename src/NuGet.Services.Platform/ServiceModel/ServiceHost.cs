@@ -21,6 +21,8 @@ using NuGet.Services.Storage;
 using NuGet.Services.Http.Middleware;
 using NuGet.Services.Http.Authentication;
 using NuGet.Services.Http.Models;
+using NuGet.Services.Monitoring;
+using System.IO;
 
 namespace NuGet.Services.ServiceModel
 {
@@ -39,6 +41,8 @@ namespace NuGet.Services.ServiceModel
 
         public StorageHub Storage { get; private set; }
         public ConfigurationHub Config { get; private set; }
+        public MonitoringHub Monitoring { get; private set; }
+
         public IReadOnlyDictionary<string, ServiceDefinition> Services { get; private set; }
         public IReadOnlyList<NuGetService> Instances { get; private set; }
         public IReadOnlyList<NuGetHttpService> HttpServiceInstances { get; private set; }
@@ -61,6 +65,10 @@ namespace NuGet.Services.ServiceModel
         /// </summary>
         public async Task<bool> Start()
         {
+            Monitoring = new MonitoringHub();
+            Monitoring.ScanForSources();
+            await Monitoring.DumpSourceList(Path.Combine(Path.GetTempPath(), "NuGetServices"));
+
             var instances = await Task.WhenAll(Services.Values.Select(StartService));
             HttpServiceInstances = instances.OfType<NuGetHttpService>().ToList().AsReadOnly();
             StartHttp(HttpServiceInstances);

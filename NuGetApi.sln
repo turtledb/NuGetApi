@@ -29,6 +29,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Warehouse", "Warehouse", "{
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "NuGet.Services.Warehouse.Database", "src\Warehouse\NuGet.Services.Warehouse.Database\NuGet.Services.Warehouse.Database.sqlproj", "{B96D3CE6-7017-4CA9-9925-27D91B7C607C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGet.Services.Monitoring.Agent", "src\NuGet.Services.Monitoring.Agent\NuGet.Services.Monitoring.Agent.csproj", "{5D619057-6E7A-4A6B-A726-87C59CCD51B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -171,6 +173,14 @@ Global
 		{B96D3CE6-7017-4CA9-9925-27D91B7C607C}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{B96D3CE6-7017-4CA9-9925-27D91B7C607C}.Release|x64.ActiveCfg = Release|Any CPU
 		{B96D3CE6-7017-4CA9-9925-27D91B7C607C}.Release|x86.ActiveCfg = Release|Any CPU
+		{5D619057-6E7A-4A6B-A726-87C59CCD51B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D619057-6E7A-4A6B-A726-87C59CCD51B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D619057-6E7A-4A6B-A726-87C59CCD51B6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5D619057-6E7A-4A6B-A726-87C59CCD51B6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5D619057-6E7A-4A6B-A726-87C59CCD51B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D619057-6E7A-4A6B-A726-87C59CCD51B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D619057-6E7A-4A6B-A726-87C59CCD51B6}.Release|x64.ActiveCfg = Release|Any CPU
+		{5D619057-6E7A-4A6B-A726-87C59CCD51B6}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
